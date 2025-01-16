@@ -4,6 +4,7 @@
 #include "../Manager/TextManager.h"
 #include "../Utility/Utility.h"
 #include "../Object/Character/PlayerBase.h"
+#include "../Object/Character/CharacterBase.h"
 
 GameScene::GameScene(SceneManager& manager) :SceneBase(manager)
 {
@@ -33,7 +34,7 @@ void GameScene::Load(void)
 		0);
 
 	//ƒvƒŒƒCƒ„[
-	player_ = std::make_unique<PlayerBase>();
+	player_ = std::make_unique<CharacterBase>();
 	player_->Load();
 }
 

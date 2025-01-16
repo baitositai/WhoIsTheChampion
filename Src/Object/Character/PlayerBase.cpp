@@ -163,8 +163,8 @@ void PlayerBase::DiffColorDraw()
 	buf.b = 1.0f;
 	buf.a = 1.0f;
 	COLOR_F subBuf;
-	subBuf.r = PLAYER_RUN_NUM_X;
-	subBuf.g = PLAYER_RUN_NUM_Y;
+	subBuf.r = OMU_RUN_NUM_X;
+	subBuf.g = OMU_RUN_NUM_Y;
 	subBuf.b = animNum_;
 	subBuf.a = 1.0f;
 

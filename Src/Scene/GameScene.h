@@ -3,6 +3,7 @@
 #include "SceneBase.h"
 
 class PlayerBase;
+class CharacterBase;
 
 class GameScene : public SceneBase
 {
@@ -23,7 +24,8 @@ public:
 private:	
 	
 	// プレイヤー(キャラクター)
-	std::unique_ptr<PlayerBase> player_;
+	//std::unique_ptr<PlayerBase> player_;
+	std::unique_ptr<CharacterBase> player_;
 
 	//Update関数
 	void LoadingUpdate(InputManager& ins);

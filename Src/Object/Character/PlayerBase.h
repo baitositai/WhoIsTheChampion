@@ -24,8 +24,8 @@ public:
 	static constexpr float FIRST_POS_Y = Application::SCREEN_SIZE_Y - 300;
 
 	//プレイヤーサイズ
-	static constexpr int SIZE_X = PLAYER_RUN_SIZE_X / PLAYER_RUN_NUM_X;
-	static constexpr int SIZE_Y = PLAYER_RUN_SIZE_Y / PLAYER_RUN_NUM_Y;
+	static constexpr int SIZE_X = OMU_RUN_SIZE_X / OMU_RUN_NUM_X;
+	static constexpr int SIZE_Y = OMU_RUN_SIZE_Y / OMU_RUN_NUM_Y;
 
 	//移動速度
 	static constexpr float MOVE_SPEED = 3.0f;
@@ -34,7 +34,7 @@ public:
 	static constexpr float ANIM_SPEED = 0.2f;
 
 	//RUNアニメーション数
-	static constexpr int ANIM_RUN_NUM = PLAYER_RUN_NUM_X * PLAYER_RUN_NUM_Y;
+	static constexpr int ANIM_RUN_NUM = OMU_RUN_NUM_X * OMU_RUN_NUM_Y;
 
 	//フォントサイズ
 	static constexpr int FONT_SIZE = 64;

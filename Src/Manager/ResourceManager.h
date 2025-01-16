@@ -3,11 +3,17 @@
 #include "../Utility/StaticSingleton.h"
 #include "Resource.h"
 
-//プレイヤー走る画像
-constexpr int PLAYER_RUN_NUM_X = 6;
-constexpr int PLAYER_RUN_NUM_Y = 1;
-constexpr int PLAYER_RUN_SIZE_X = 1080 / PLAYER_RUN_NUM_X;
-constexpr int PLAYER_RUN_SIZE_Y = 240 / PLAYER_RUN_NUM_Y;
+// オムレツ走る画像
+constexpr int OMU_RUN_NUM_X = 6;
+constexpr int OMU_RUN_NUM_Y = 1;
+constexpr int OMU_RUN_SIZE_X = 1080 / OMU_RUN_NUM_X;
+constexpr int OMU_RUN_SIZE_Y = 240 / OMU_RUN_NUM_Y;
+
+//プレイヤー画像
+constexpr int PLAYER_NUM_X = 12;
+constexpr int PLAYER_NUM_Y = 7;
+constexpr int PLAYER_SIZE_X = 600 / PLAYER_NUM_X;
+constexpr int PLAYER_SIZE_Y = 350 / PLAYER_NUM_Y;
 
 class ResourceManager :
 	public StaticSingleton<ResourceManager>
@@ -20,7 +26,10 @@ public:
 	{
 		TITLE_LOGO,
 		OMU_RUN,
-		TEST
+		PLAYER_01,
+		PLAYER_02,
+		PLAYER_03,
+		PLAYER_04,
 	};
 
 	// 初期化
