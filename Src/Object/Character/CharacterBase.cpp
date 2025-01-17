@@ -1,4 +1,5 @@
 #include "../../framework.h"
+#include "../../Manager/InputManager.h"
 #include "CharacterBase.h"
 
 CharacterBase::CharacterBase()
@@ -10,6 +11,7 @@ CharacterBase::CharacterBase()
 	animSpeed_ = -1.0f;
 	animState_ = ANIM_STATE::MAX;
 	dir_ = false;
+	moveMaxSpeed_ = -1.0f;
 	moveSpeed_ = -1.0f;
 	rate_ = -1.0f;
 	state_ = STATE::NONE;
@@ -26,9 +28,6 @@ CharacterBase::CharacterBase()
 
 void CharacterBase::Load()
 {
-	//‰æ‘œ“Ç‚İ‚İ
-	imgPlayer_ = ResourceManager::GetInstance().Load(
-		ResourceManager::SRC::PLAYER_01).handleIds_;
 }
 
 void CharacterBase::Init()
@@ -143,6 +142,43 @@ void CharacterBase::UpdateActive()
 }
 
 void CharacterBase::UpdateDeath()
+{
+}
+
+void CharacterBase::Move()
+{
+}
+
+void CharacterBase::Accele(float speed)
+{
+	moveSpeed_ += speed;
+
+	//‘¬“x§ŒÀ(‰E•ûŒü)
+	if (moveSpeed_ > moveMaxSpeed_)
+	{
+		moveSpeed_ = moveMaxSpeed_;
+	}
+
+	//‘¬“x§ŒÀ(¶•ûŒü)
+	if (moveSpeed_ < -moveMaxSpeed_)
+	{
+		moveSpeed_ = -moveMaxSpeed_;
+	}
+}
+
+void CharacterBase::Decelerate(float speed)
+{
+}
+
+void CharacterBase::AddGravity(void)
+{
+}
+
+void CharacterBase::Jump(void)
+{
+}
+
+void CharacterBase::SetJumpPow(float pow)
 {
 }
 

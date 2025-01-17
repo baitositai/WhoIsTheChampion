@@ -34,7 +34,7 @@ void GameScene::Load(void)
 		0);
 
 	//ƒvƒŒƒCƒ„[
-	player_ = std::make_unique<CharacterBase>();
+	player_ = std::make_unique<PlayerBase>();
 	player_->Load();
 }
 

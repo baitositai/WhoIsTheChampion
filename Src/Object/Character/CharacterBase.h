@@ -55,6 +55,25 @@ public:
 	//アニメーション種類数
 	static constexpr int ANIM_STATE_MAX = static_cast<int>(ANIM_STATE::MAX);
 
+	//加速
+	static constexpr float MOVE_ACC = 0.25f;
+
+	//減速
+	static constexpr float MOVE_DEC = 0.15f;
+
+	//移動速度の最大値
+	static constexpr float MAX_MOVE_SPEED = 3.5f;
+
+	//最大ジャンプ力
+	static constexpr float MAX_JUMP_POW = 8.0;
+	static constexpr float DEATH_JUMP_POW = 6.0f;
+
+	//重力
+	static constexpr float GRAVITY = 0.25;
+
+	//ジャンプのフレーム量
+	static constexpr float INPUT_JUMP_FRAME = 4.0f;
+
 	CharacterBase();
 	~CharacterBase() = default;
 
@@ -70,7 +89,7 @@ public:
 	//アニメーションの変更
 	inline void ChangeAnimState(const ANIM_STATE state);
 
-private:
+protected:
 
 	//状態
 	STATE state_;
@@ -95,6 +114,7 @@ private:
 
 	//移動スピード
 	float moveSpeed_;
+	float moveMaxSpeed_;	//移動最大速度
 
 	//アニメーション状態
 	ANIM_STATE animState_;
@@ -123,9 +143,27 @@ private:
 	void ChangeDeath();
 
 	//状態別更新処理
-	void UpdateNone();
-	void UpdateActive();
-	void UpdateDeath();
+	virtual void UpdateNone();
+	virtual void UpdateActive();
+	virtual void UpdateDeath();
+
+	//移動(実際の座標移動)					
+	void Move();				
+
+	//加速に関する処理
+	void Accele(float speed);		
+
+	//減速に関する処理
+	void Decelerate(float speed);	
+
+	//重力をかける
+	void AddGravity(void);				
+	
+	//ジャンプ
+	void Jump(void);	
+	
+	//ジャンプ力の設定				
+	void SetJumpPow(float pow);			
 
 	//アニメーション処理
 	void Animation();

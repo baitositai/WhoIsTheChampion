@@ -69,7 +69,7 @@ void Application::Run(void)
 	auto& sceneManager = SceneManager::GetInstance();
 
 	//初期シーン
-	sceneManager.CreateScene(std::make_shared<TitleScene>(sceneManager));
+	sceneManager.CreateScene(std::make_shared<GameScene>(sceneManager));
 
 	// ゲームループ
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)

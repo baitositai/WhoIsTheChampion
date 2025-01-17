@@ -24,8 +24,7 @@ public:
 private:	
 	
 	// プレイヤー(キャラクター)
-	//std::unique_ptr<PlayerBase> player_;
-	std::unique_ptr<CharacterBase> player_;
+	std::unique_ptr<PlayerBase> player_;
 
 	//Update関数
 	void LoadingUpdate(InputManager& ins);
