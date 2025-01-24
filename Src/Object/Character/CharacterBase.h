@@ -1,4 +1,5 @@
 #pragma once
+#include "../../framework.h"
 #include "../../Application.h"
 #include "../../Manager/ResourceManager.h"
 #include "../../Common/Vector2.h"
