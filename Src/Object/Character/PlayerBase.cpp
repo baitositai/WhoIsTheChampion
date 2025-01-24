@@ -25,6 +25,14 @@ void PlayerBase::UpdateNone()
 
 void PlayerBase::UpdateActive()
 {
+	//移動操作処理
+	ProcessMove();
+
+	//ジャンプ操作処理
+	ProcessJump();
+
+
+	//アニメーション
 	Animation();
 }
 
@@ -52,4 +60,8 @@ void PlayerBase::ProcessMove()
 		animState_ = ANIM_STATE::RUN;
 		Accele(-MOVE_ACC);			//加速
 	}
+}
+
+void PlayerBase::ProcessJump()
+{
 }

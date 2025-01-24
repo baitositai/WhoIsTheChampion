@@ -30,6 +30,12 @@ void Fader::Init(void)
 	isPreEnd_ = true;
 	isEnd_ = true;
 
+	tmpScreen_ = MakeScreen(
+		Application::SCREEN_SIZE_X,
+		Application::SCREEN_SIZE_Y,
+		true
+	);
+
 	//フェードシェーダー画像
 	imgFade_ = LoadGraph(L"Data/Image/Fade/79.png");
 }
@@ -49,10 +55,10 @@ void Fader::Update(void)
 
 	case STATE::FADE_OUT:
 		alpha_ += SPEED_ALPHA;
-		if (alpha_ > 255)
+		if (alpha_ > ALPHA_MAX)
 		{
 			// フェード終了
-			alpha_ = 255;
+			alpha_ = ALPHA_MAX;
 			if (isPreEnd_)
 			{
 				// 1フレーム後(Draw後)に終了とする
@@ -93,14 +99,6 @@ void Fader::Draw(void)
 		return;
 	case STATE::FADE_OUT:
 	case STATE::FADE_IN:
-		/*SetDrawBlendMode(DX_BLENDMODE_ALPHA, (int)alpha_);
-		DrawBox(
-			0, 0,
-			Application::SCREEN_SIZE_X,
-			Application::SCREEN_SIZE_Y,
-			0x000000, true);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);*/
-
 		auto& ds = PixelShader::GetInstance();
 		COLOR_F buf = COLOR_F{ alpha_ / 255 };
 		ds.DrawExtendGraphToShader(
