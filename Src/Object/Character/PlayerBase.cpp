@@ -16,7 +16,7 @@ void PlayerBase::Load()
 {
 	//‰æ‘œ“Ç‚İ‚İ
 	imgPlayer_ = ResourceManager::GetInstance().Load(
-		ResourceManager::SRC::PLAYER_01).handleIds_;
+		ResourceManager::SRC::PLAYER_04).handleIds_;
 }
 
 void PlayerBase::UpdateNone()

@@ -4,6 +4,7 @@
 
 class PlayerBase;
 class CharacterBase;
+class StageBase;
 
 class GameScene : public SceneBase
 {
@@ -25,6 +26,9 @@ private:
 	
 	// プレイヤー(キャラクター)
 	std::unique_ptr<PlayerBase> player_;
+
+	//ステージ
+	std::unique_ptr<StageBase> stage_;
 
 	//Update関数
 	void LoadingUpdate(InputManager& ins);

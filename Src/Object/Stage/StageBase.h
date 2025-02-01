@@ -1,11 +1,15 @@
 #pragma once
+#include "../../framework.h"
+#include "../../Utility/Utility.h"
+
 class StageBase
 {
 public:
 
 	StageBase();
-	~StageBase();
+	~StageBase() = default;
 
+	void Load();
 	void Init();
 	void Update();
 	void Draw();
@@ -13,10 +17,8 @@ public:
 
 private:
 
-	//“Ç‚İ‚İ
-	void Load();
+	//CSVƒf[ƒ^“Ç‚İ‚İ
+	void CsvDataLoad();
 
-	//‰Šú‰»ˆ—
-	void Reset();
 };
 

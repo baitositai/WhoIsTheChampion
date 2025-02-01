@@ -8,7 +8,9 @@ class Application
 
 public:
 
-	// スクリーンサイズ(16:9)	※4:3にする場合 1024×768
+	// スクリーンサイズ(16:9)	
+	//※4:3にする場合 1024×768
+	//※16:9にする場合 1280×720
 	static constexpr int SCREEN_SIZE_X = 1280;
 	static constexpr int SCREEN_SIZE_Y = 720;
 	
@@ -23,6 +25,8 @@ public:
 	static const std::wstring PATH_EFFECT;
 	static const std::wstring PATH_FONT;
 	static const std::wstring PATH_TEXT;
+	static const std::wstring PATH_CSV;
+	static const std::wstring PATH_JSON;
 	//-------------------------------------------
 
 	// 明示的にインステンスを生成する

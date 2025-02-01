@@ -30,7 +30,4 @@ private:
 
 	//‘€ìˆ—
 	void ProcessMove();
-
-	
 };
-
