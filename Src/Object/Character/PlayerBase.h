@@ -30,4 +30,10 @@ private:
 
 	//‘€ìˆ—
 	void ProcessMove();
+
+	//ƒWƒƒƒ“ƒvˆ—
+	void ProcessJump();
+
+	
 };
+

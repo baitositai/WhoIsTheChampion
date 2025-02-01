@@ -7,6 +7,7 @@ public:
 
 	// フェードが進む速さ
 	static constexpr float SPEED_ALPHA = 5.0f;
+	static constexpr float ALPHA_MAX = 255.0f;
 
 	// 状態
 	enum class STATE
@@ -52,5 +53,9 @@ private:
 
 	//フェード用画像
 	int imgFade_;
+
+	int tmpScreen_;
+
+	void CircleMask();
 
 };
